@@ -1,6 +1,17 @@
-<p>Your guess: <%= @guess %></p>
-<p>The grid: <%= @grid %></p>
+<div class="game-container">
+  <div class="game-item">
+    <p><strong>Your guess: </strong><%= @guess %></p>
+    <p><strong>The grid: </strong>|
+      <% @grid.each do |letter| %>
+        <%= " #{letter} |" %>
+      <% end %>
+    </p>
+  </div>
+  <div class="game-item">
+    <% @result.each do |key, value| %>
+      <div><strong><%= key %>:</strong> <%= value %></div>
+    <% end %>
+  </div>
+</div>
 
-<% @result.each do |key, value| %>
-  <p><%= key %>: <%= value %></p>
-<% end %>
+

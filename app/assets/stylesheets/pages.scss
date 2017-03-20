@@ -1,3 +1,17 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.game-container {
+  max-width: 500px;
+  padding: 3px;
+  margin: 0px auto;
+}
+
+.game-item {
+  margin-top: 50px;
+}
+
+.grid {
+  font-size: 1.2em;
+}

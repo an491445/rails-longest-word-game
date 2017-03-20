@@ -17,7 +17,7 @@ class PagesController < ApplicationController
     # Otherwise calculate score
     else
       @result[:score] = @guess.length
-      @result[:translation] = get_translation(@guess)
+      #@result[:translation] = get_translation(@guess)
     end
   end
 

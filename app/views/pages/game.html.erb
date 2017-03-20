@@ -1,14 +1,18 @@
-<p>Here is your grid:</p>
-<table>
-  <tr>
+<div class="text-center">
+  <div class="game-item">
+  <p><strong>Here is your grid:</strong></p>
+  <p class="grid">|
     <% @grid.each do |letter| %>
-      <td><%= letter %></td>
+      <%= " #{letter} |" %>
     <% end %>
-  </tr>
-</table>
-<p>What is your best shot?</p>
-<form action="/score" method="get">
-  <input type="hidden" name="grid" value="<%= @grid %>">
-  <input type="text" name="word">
-  <input type="submit">
-</form>
+  </p>
+  </div>
+  <div class="game-item">
+  <p><strong>What is your best shot?</strong></p>
+  <form action="/score" method="get" class="form-inline">
+    <input type="hidden" name="grid" value="<%= @grid %>">
+    <input type="text" name="word" class="form-control">
+    <input type="submit" class="btn btn-primary">
+  </form>
+  </div>
+</div>
