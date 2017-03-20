@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     @time = Time.now - Time.parse(params[:time])
     @guess = params[:word]
     @grid = JSON.parse(params[:grid])
-    @result = { score: 0, message: "Well done!", time: 1 }
+    @result = { score: 0, message: "Well done!" }
 
     # If the word is not in the grid
     if !check_grid(@guess, @grid)
@@ -20,7 +20,7 @@ class PagesController < ApplicationController
     else
       score = @guess.length - (@time / 10).round
       @result[:score] = [0, score].max
-      #@result[:translation] = get_translation(@guess)
+      @result[:translation] = get_translation(@guess)
     end
   end
 

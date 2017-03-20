@@ -1,15 +1,18 @@
 <div class="game-container">
   <div class="game-item">
-    <p><strong>Your guess: </strong><%= @guess %></p>
-    <p><strong>The grid: </strong>|
+    <div><strong>Your guess: </strong><%= @guess %></div>
+    <div><strong>The grid: </strong>|
       <% @grid.each do |letter| %>
         <%= " #{letter} |" %>
       <% end %>
-    </p>
+    </div>
   </div>
   <div class="game-item">
     <% @result.each do |key, value| %>
       <div><strong><%= key %>:</strong> <%= value %></div>
     <% end %>
+  </div>
+  <div class="game-item">
+    <%= link_to "Try again", game_path %>
   </div>
 </div>
