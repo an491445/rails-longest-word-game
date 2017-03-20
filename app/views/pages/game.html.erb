@@ -11,6 +11,7 @@
   <p><strong>What is your best shot?</strong></p>
   <form action="/score" method="get" class="form-inline">
     <input type="hidden" name="grid" value="<%= @grid %>">
+    <input type="hidden" name="time" value="<%= @time_now %>">
     <input type="text" name="word" class="form-control">
     <input type="submit" class="btn btn-primary">
   </form>

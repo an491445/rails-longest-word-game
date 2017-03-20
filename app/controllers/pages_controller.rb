@@ -1,9 +1,11 @@
 class PagesController < ApplicationController
   def game
-    @grid = generate_grid(9);
+    @grid = generate_grid(9)
+    @time_now = Time.now
   end
 
   def score
+    @time = Time.now - Time.parse(params[:time])
     @guess = params[:word]
     @grid = JSON.parse(params[:grid])
     @result = { score: 0, message: "Well done!", time: 1 }
@@ -16,7 +18,8 @@ class PagesController < ApplicationController
       @result[:message] = "not an english word"
     # Otherwise calculate score
     else
-      @result[:score] = @guess.length
+      score = @guess.length - (@time / 10).round
+      @result[:score] = [0, score].max
       #@result[:translation] = get_translation(@guess)
     end
   end
