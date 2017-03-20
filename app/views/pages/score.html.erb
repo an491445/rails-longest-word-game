@@ -1,0 +1,6 @@
+<p>Your guess: <%= @guess %></p>
+<p>The grid: <%= @grid %></p>
+
+<% @result.each do |key, value| %>
+  <p><%= key %>: <%= value %></p>
+<% end %>

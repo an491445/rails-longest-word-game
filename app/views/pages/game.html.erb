@@ -1,0 +1,14 @@
+<p>Here is your grid:</p>
+<table>
+  <tr>
+    <% @grid.each do |letter| %>
+      <td><%= letter %></td>
+    <% end %>
+  </tr>
+</table>
+<p>What is your best shot?</p>
+<form action="/score" method="get">
+  <input type="hidden" name="grid" value="<%= @grid %>">
+  <input type="text" name="word">
+  <input type="submit">
+</form>
